@@ -1,4 +1,4 @@
-<%= form_with(model: property, local: true) do |form| %>
+<%= form_with(model: property, local: true, html: { multipart: true }) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -34,6 +34,11 @@
   <div class="field">
     <%= form.label :rating %>
     <%= form.text_field :rating, id: :property_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :property_image %>
   </div>
 
   <div class="actions">

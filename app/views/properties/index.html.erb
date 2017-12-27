@@ -17,6 +17,7 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
+        <td><%= image_tag property.image.url(:medium) %></td>
         <td><%= property.name %></td>
         <td><%= property.description %></td>
         <td><%= property.builtup %></td>
